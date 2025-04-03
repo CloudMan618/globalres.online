@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="CloudMan618" />
+    <title>GlobalRes.online - Global Resource Navigation</title>
+    <meta name="keywords" content="resource navigation,website navigation,global resources,creative navigation,website directory,resource directory,navigation website,excellent website navigation,global website navigation,www.globalres.online">
+    <meta name="description" content="GlobalRes.online - Collection of global quality website resources, including design, development, tools, learning and other types of websites, regularly updated sharing quality website navigation. www.globalres.online">
+    <link rel="shortcut icon" href="../assets/images/favicon.png">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
+    <link rel="stylesheet" href="../assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="../assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/xenon-core.css">
+    <link rel="stylesheet" href="../assets/css/xenon-components.css">
+    <link rel="stylesheet" href="../assets/css/xenon-skins.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <script src="../assets/js/jquery-1.11.1.min.js"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-8550836177608334",
@@ -4251,6 +4268,40 @@
     <!-- JavaScripts initializations and stuff -->
     <script src="../assets/js/xenon-custom.js"></script>
     <script src="../assets/js/lozad.js"></script>
+    <script>
+        // 图片懒加载
+        const observer = lozad();
+        observer.observe();
+        
+        $(document).ready(function()
+        {
+            // 链接平滑滚动
+            $('a.smooth').click(function(ev) 
+            {
+                ev.preventDefault();
+                
+                public_vars.$mainMenu.add(public_vars.$sidebarProfile).toggleClass('mobile-is-visible');
+                ps_destroy();
+                $("html, body").animate({
+                    scrollTop: $($(this).attr("href")).offset().top - 30
+                }, {
+                    duration: 500,
+                    easing: "swing"
+                });
+            });
+            
+            // 菜单高亮
+            $("#main-menu li ul li").click(function() {
+                $(this).siblings('li').removeClass('active');
+                $(this).addClass('active');
+            });
+            
+            // 菜单收缩展开
+            $(".sidebar-collapse").click(function(){
+                $("#main-menu").toggleClass('expanded');
+            });
+        });
+    </script>
 </body>
 
 </html>
